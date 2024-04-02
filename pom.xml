@@ -16,6 +16,8 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+<!--	remove packaging after deployment-->
+	<packaging>war</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -44,16 +46,27 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>annotationProcessor</scope>
+			<optional>true</optional>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
+<!--		remove final name after deployment-->
+		<finalName>conference-demo 1.0</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
